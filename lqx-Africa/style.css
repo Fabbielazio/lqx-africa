@@ -1,0 +1,5207 @@
+/* =========================================================
+   LQX AFRICA
+   COMMERCIAL LIQUIDITY EXCHANGE INFRASTRUCTURE
+   GLOBAL STYLESHEET
+   ========================================================= */
+
+
+/* =========================================================
+   01. ROOT VARIABLES
+   ========================================================= */
+
+:root {
+
+    --lqx-navy: #0b1f33;
+    --lqx-navy-dark: #071522;
+    --lqx-blue: #123e63;
+    --lqx-blue-light: #1e5d8f;
+
+    --lqx-gold: #c59a45;
+    --lqx-gold-dark: #a77d2f;
+    --lqx-gold-light: #d8b86b;
+
+    --white: #ffffff;
+    --off-white: #f7f9fb;
+    --light-grey: #eef2f5;
+
+    --border: #dce3e9;
+
+    --text: #17212b;
+    --text-light: #5d6b78;
+    --text-muted: #7d8994;
+
+    --success: #2f7d50;
+    --danger: #a33b3b;
+
+    --container: 1200px;
+
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+
+    --shadow-sm: 0 4px 14px rgba(11, 31, 51, 0.06);
+    --shadow-md: 0 12px 32px rgba(11, 31, 51, 0.09);
+    --shadow-lg: 0 20px 50px rgba(11, 31, 51, 0.12);
+
+    --transition: 0.25s ease;
+
+}
+
+
+/* =========================================================
+   02. RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: var(--white);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* =========================================================
+   03. TYPOGRAPHY
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--lqx-navy);
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+h1 {
+    font-size: clamp(2.6rem, 5vw, 4.5rem);
+}
+
+h2 {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+h4 {
+    font-size: 1rem;
+}
+
+p {
+    color: var(--text-light);
+    font-size: 0.92rem;
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   04. CONTAINER
+   ========================================================= */
+
+.container {
+    width: min(92%, var(--container));
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   05. GLOBAL SECTION SYSTEM
+   Consistent spacing/layering inspired by
+   the "Let's Build Together" section.
+   ========================================================= */
+
+.section {
+    position: relative;
+    padding: 105px 0;
+    overflow: hidden;
+}
+
+.section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.section > .container {
+    position: relative;
+    z-index: 1;
+}
+
+.section-light {
+    background: var(--white);
+}
+
+.section-dark {
+    background: var(--off-white);
+}
+
+.section-header {
+    position: relative;
+    z-index: 1;
+    max-width: 820px;
+    margin: 0 auto 58px;
+    text-align: center;
+}
+
+.section-header h2 {
+    margin-bottom: 18px;
+}
+
+.section-header > p:last-child {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.section-tag {
+    margin-bottom: 12px;
+    color: var(--lqx-gold);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   06. BUTTONS
+   ========================================================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    min-height: 48px;
+    padding: 13px 25px;
+
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+
+    cursor: pointer;
+
+    transition:
+        background var(--transition),
+        border-color var(--transition),
+        color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: var(--lqx-gold);
+    color: var(--lqx-navy);
+    border-color: var(--lqx-gold);
+}
+
+.btn-primary:hover {
+    background: var(--lqx-gold-light);
+    border-color: var(--lqx-gold-light);
+    color: var(--lqx-navy);
+    box-shadow: 0 10px 25px rgba(197, 154, 69, 0.25);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--white);
+    border-color: rgba(255,255,255,0.7);
+}
+
+.btn-outline:hover {
+    background: var(--white);
+    color: var(--lqx-navy);
+    border-color: var(--white);
+}
+
+.btn-outline-light {
+    background: var(--lqx-gold);
+    color: var(--lqx-navy);
+    border-color: var(--lqx-gold);
+}
+
+.btn-outline-light:hover {
+    background: var(--lqx-gold-light);
+    color: var(--lqx-navy);
+    border-color: var(--lqx-gold-light);
+    box-shadow: 0 10px 25px rgba(197, 154, 69, 0.25);
+}
+
+.btn-nav {
+    background: var(--lqx-gold);
+    color: var(--lqx-navy);
+    border-color: var(--lqx-gold);
+    min-height: 42px;
+    padding: 10px 18px;
+    font-size: 0.72rem;
+}
+
+.btn-nav:hover {
+    background: var(--lqx-gold-light);
+    border-color: var(--lqx-gold-light);
+}
+
+
+/* =========================================================
+   07. HEADER / NAVIGATION
+   ========================================================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background: rgba(7, 21, 34, 0.94);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.nav-container {
+    min-height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: baseline;
+
+    white-space: nowrap;
+
+    font-weight: 800;
+    letter-spacing: -0.04em;
+}
+
+.logo-main {
+    color: var(--white);
+    font-size: 1.8rem;
+}
+
+.logo-gold {
+    margin-left: 4px;
+    color: var(--lqx-gold);
+    font-size: 0.92rem;
+    letter-spacing: 0.04em;
+}
+
+.nav-container nav {
+    margin-left: auto;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: rgba(255,255,255,0.78);
+
+    font-size: 0.73rem;
+    font-weight: 500;
+
+    transition: color var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--white);
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--lqx-gold);
+
+    transition: width var(--transition);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   08. HERO
+   ========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 150px 0 110px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7,21,34,0.94),
+            rgba(11,31,51,0.82),
+            rgba(11,31,51,0.65)
+        ),
+        url("images/hero.jpg") center center / cover no-repeat;
+
+    color: var(--white);
+
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+    right: -180px;
+    bottom: -220px;
+
+    width: 600px;
+    height: 600px;
+
+    border-radius: 50%;
+
+    background: rgba(197,154,69,0.08);
+
+    pointer-events: none;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 900px;
+}
+
+.hero-label {
+    margin-bottom: 18px;
+
+    color: var(--lqx-gold);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    margin-bottom: 25px;
+    color: var(--white);
+}
+
+.hero h1 span {
+    color: var(--lqx-gold-light);
+}
+
+.hero-text {
+    max-width: 760px;
+    margin-bottom: 34px;
+
+    color: rgba(255,255,255,0.78);
+
+    font-size: 1rem;
+    line-height: 1.85;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+
+/* =========================================================
+   09. TRUST BAR
+   ========================================================= */
+
+.trust-bar {
+    position: relative;
+    padding: 42px 0;
+
+    background: var(--white);
+
+    border-bottom: 1px solid var(--border);
+
+    z-index: 2;
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.trust-item {
+    padding: 22px 20px;
+
+    text-align: center;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    background: var(--white);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+}
+
+.trust-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--lqx-gold);
+    box-shadow: var(--shadow-sm);
+}
+
+.trust-item i {
+    margin-bottom: 13px;
+
+    color: var(--lqx-gold);
+
+    font-size: 1.35rem;
+}
+
+.trust-item h3 {
+    margin-bottom: 7px;
+    font-size: 0.9rem;
+}
+
+.trust-item p {
+    font-size: 0.76rem;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   10. BUILDING THE INFRASTRUCTURE / STATISTICS
+   ========================================================= */
+
+.statistics {
+    position: relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--lqx-navy-dark),
+            var(--lqx-navy)
+        );
+
+    color: var(--white);
+}
+
+.statistics::after {
+    content: "";
+
+    position: absolute;
+    top: -240px;
+    right: -180px;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(197,154,69,0.12);
+
+    box-shadow:
+        0 0 0 60px rgba(197,154,69,0.025),
+        0 0 0 120px rgba(197,154,69,0.015);
+
+    pointer-events: none;
+}
+
+.statistics .section-header {
+    position: relative;
+    z-index: 2;
+}
+
+.statistics .section-header h2 {
+    color: var(--white);
+}
+
+.statistics .section-header p:last-child {
+    color: rgba(255,255,255,0.68);
+}
+
+.statistics .card-grid {
+    position: relative;
+    z-index: 2;
+}
+
+.statistics .feature-card {
+    background: rgba(255,255,255,0.055);
+    border-color: rgba(255,255,255,0.1);
+}
+
+.statistics .feature-card h2 {
+    color: var(--lqx-gold-light);
+    font-size: 1.2rem;
+}
+
+.statistics .feature-card p {
+    color: rgba(255,255,255,0.66);
+}
+
+.statistics .feature-card i {
+    background: rgba(255,255,255,0.07);
+}
+
+
+/* =========================================================
+   11. VISION / MISSION
+   ========================================================= */
+
+.vision-section {
+    background: var(--white);
+}
+
+.vision-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.vision-card {
+    position: relative;
+
+    padding: 42px 38px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+
+    text-align: center;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+
+    overflow: hidden;
+}
+
+.vision-card::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: var(--lqx-gold);
+}
+
+.vision-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(197,154,69,0.45);
+    box-shadow: var(--shadow-md);
+}
+
+.vision-icon {
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 22px;
+
+    border-radius: 50%;
+
+    background: rgba(197,154,69,0.1);
+
+    color: var(--lqx-gold);
+
+    font-size: 1.35rem;
+}
+
+.vision-card h3 {
+    margin-bottom: 14px;
+}
+
+.vision-card p {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   12. CORE VALUES
+   ========================================================= */
+
+.values-wrapper {
+    margin-top: 70px;
+}
+
+.values-title {
+    margin-bottom: 35px;
+
+    text-align: center;
+
+    font-size: 1.6rem;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.value-card {
+    padding: 28px 22px;
+
+    text-align: center;
+
+    background: var(--off-white);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        border-color var(--transition);
+}
+
+.value-card:hover {
+    transform: translateY(-4px);
+
+    background: var(--lqx-navy);
+
+    border-color: var(--lqx-navy);
+}
+
+.value-card i {
+    margin-bottom: 15px;
+
+    color: var(--lqx-gold);
+
+    font-size: 1.55rem;
+}
+
+.value-card h4 {
+    margin-bottom: 8px;
+}
+
+.value-card p {
+    font-size: 0.78rem;
+}
+
+.value-card:hover h4 {
+    color: var(--white);
+}
+
+.value-card:hover p {
+    color: rgba(255,255,255,0.68);
+}
+
+
+/* =========================================================
+   13. UNIVERSAL CARD GRIDS
+   ========================================================= */
+
+.card-grid,
+.steps-grid,
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+
+/* =========================================================
+   14. FEATURE CARDS
+   ========================================================= */
+
+.feature-card,
+.step-card,
+.news-card {
+    position: relative;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    box-shadow: var(--shadow-sm);
+
+    overflow: hidden;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+}
+
+.feature-card:hover,
+.step-card:hover,
+.news-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(197,154,69,0.5);
+
+    box-shadow: var(--shadow-md);
+}
+
+.feature-card::before,
+.step-card::before,
+.news-card::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: var(--lqx-gold);
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform var(--transition);
+}
+
+.feature-card:hover::before,
+.step-card:hover::before,
+.news-card:hover::before {
+    transform: scaleX(1);
+}
+
+.feature-card {
+    padding: 32px 27px;
+    text-align: center;
+}
+
+.feature-card > i {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: rgba(197,154,69,0.1);
+
+    color: var(--lqx-gold);
+
+    font-size: 1.25rem;
+}
+
+.feature-card h3 {
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    font-size: 0.82rem;
+}
+
+
+/* =========================================================
+   15. ECOSYSTEM
+   Four cards on one row
+   ========================================================= */
+
+.ecosystem-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+
+    align-items: stretch;
+}
+
+.ecosystem-card {
+    position: relative;
+
+    padding: 28px 20px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    text-align: center;
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+
+    overflow: hidden;
+}
+
+.ecosystem-card::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: var(--lqx-gold);
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform var(--transition);
+}
+
+.ecosystem-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(197,154,69,0.5);
+
+    box-shadow: var(--shadow-md);
+}
+
+.ecosystem-card:hover::before {
+    transform: scaleX(1);
+}
+
+.ecosystem-card > i {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 17px;
+
+    border-radius: 50%;
+
+    background: rgba(197,154,69,0.1);
+
+    color: var(--lqx-gold);
+
+    font-size: 1.15rem;
+}
+
+.ecosystem-card h3 {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.ecosystem-card p {
+    font-size: 0.76rem;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   16. HOW IT WORKS / PROCESS
+   ========================================================= */
+
+.steps-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.step-card {
+    padding: 30px 23px;
+
+    text-align: center;
+}
+
+.step-number {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    background: var(--lqx-navy);
+
+    color: var(--lqx-gold-light);
+
+    border: 2px solid rgba(197,154,69,0.5);
+
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.step-card h3 {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+}
+
+.step-card p {
+    font-size: 0.76rem;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   17. NEWS & INSIGHTS
+   Distinct background treatment
+   ========================================================= */
+
+.news-section {
+    background: var(--off-white);
+}
+
+.news-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.news-card {
+    display: flex;
+    flex-direction: column;
+
+    background: var(--white);
+}
+
+.news-image {
+    position: relative;
+
+    height: 210px;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+.news-image::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(7,21,34,0.5),
+            transparent 60%
+        );
+}
+
+/* Insight 1 */
+.news-card:nth-child(1) .news-image {
+    background-image:
+        url("images/news-commercial-liquidity.jpg");
+}
+
+/* Insight 2 */
+.news-card:nth-child(2) .news-image {
+    background-image:
+        url("images/news-capital.jpg");
+}
+
+/* Insight 3 */
+.news-card:nth-child(3) .news-image {
+    background-image:
+        url("images/news-commercial-opportunity.jpg");
+}
+
+.news-content {
+    padding: 25px 25px 28px;
+}
+
+.news-date {
+    margin-bottom: 9px;
+
+    color: var(--lqx-gold);
+
+    font-size: 0.68rem;
+    font-weight: 700;
+
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.news-card h3 {
+    margin-bottom: 12px;
+
+    font-size: 1rem;
+    line-height: 1.45;
+}
+
+.news-card p {
+    font-size: 0.78rem;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   18. LET'S BUILD TOGETHER / CTA
+   Shared spacing and visual layering system
+   ========================================================= */
+
+.cta-section {
+    position: relative;
+
+    padding: 110px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--lqx-navy-dark),
+            var(--lqx-navy)
+        );
+
+    color: var(--white);
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: "";
+
+    position: absolute;
+
+    top: -240px;
+    left: -170px;
+
+    width: 520px;
+    height: 520px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(197,154,69,0.12);
+
+    box-shadow:
+        0 0 0 70px rgba(197,154,69,0.025),
+        0 0 0 140px rgba(197,154,69,0.015);
+
+    pointer-events: none;
+}
+
+.cta-section::after {
+    content: "";
+
+    position: absolute;
+
+    right: -180px;
+    bottom: -280px;
+
+    width: 560px;
+    height: 560px;
+
+    border-radius: 50%;
+
+    background: rgba(197,154,69,0.05);
+
+    pointer-events: none;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 850px;
+
+    margin: 0 auto;
+}
+
+.cta-content .section-tag {
+    color: var(--lqx-gold-light);
+}
+
+.cta-content h2 {
+    color: var(--white);
+
+    margin-bottom: 18px;
+}
+
+.cta-content > p:not(.section-tag) {
+    max-width: 720px;
+
+    margin: 0 auto 32px;
+
+    color: rgba(255,255,255,0.7);
+}
+
+.cta-buttons {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   19. NEWSLETTER / STAY UPDATED
+   ========================================================= */
+
+.newsletter {
+    position: relative;
+
+    padding: 72px 0;
+
+    background: var(--white);
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.newsletter-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 50px;
+}
+
+.newsletter-content > div:first-child {
+    max-width: 470px;
+}
+
+.newsletter h2 {
+    margin-bottom: 10px;
+
+    font-size: 1.8rem;
+}
+
+.newsletter p {
+    font-size: 0.82rem;
+}
+
+.newsletter-form {
+    display: flex;
+    align-items: stretch;
+
+    width: min(100%, 520px);
+
+    gap: 10px;
+}
+
+.newsletter-form input {
+    flex: 1;
+
+    min-width: 0;
+    min-height: 48px;
+
+    padding: 12px 18px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    outline: none;
+
+    color: var(--text);
+
+    font-size: 0.78rem;
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.newsletter-form input::placeholder {
+    color: var(--text-muted);
+}
+
+.newsletter-form input:focus {
+    border-color: var(--lqx-gold);
+    box-shadow: 0 0 0 3px rgba(197,154,69,0.1);
+}
+
+.newsletter-form .btn {
+    flex-shrink: 0;
+
+    min-height: 48px;
+    border-radius: var(--radius-md);
+}
+
+
+/* =========================================================
+   20. FOOTER
+   Identical footer structure across pages
+   ========================================================= */
+
+.site-footer {
+    position: relative;
+
+    padding: 115px 0 24px;
+
+    background: var(--lqx-navy-dark);
+
+    overflow: hidden;
+}
+
+.site-footer::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(197,154,69,0.5),
+        transparent
+    );
+}
+
+.footer-grid {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+
+    gap: 45px;
+
+    padding-bottom: 50px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-brand .logo-main {
+    color: var(--white);
+}
+
+.footer-brand p {
+    max-width: 380px;
+
+    margin-top: 17px;
+
+    color: rgba(255,255,255,0.56);
+
+    font-size: 0.78rem;
+    line-height: 1.7;
+}
+
+.footer-brand .social-links {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 23px;
+}
+
+.social-links a {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50%;
+
+    color: rgba(255,255,255,0.65);
+
+    font-size: 0.8rem;
+
+    transition:
+        color var(--transition),
+        border-color var(--transition),
+        background var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--lqx-navy);
+    background: var(--lqx-gold);
+    border-color: var(--lqx-gold);
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 10px;
+}
+
+.footer-column h4 {
+    margin-bottom: 9px;
+
+    color: var(--lqx-gold-light);
+
+    font-size: 0.68rem;
+
+    letter-spacing: 0.13em;
+}
+
+.footer-column a,
+.footer-column p {
+    color: rgba(255,255,255,0.6);
+
+    font-size: 0.76rem;
+
+    transition: color var(--transition);
+}
+
+.footer-column a:hover {
+    color: var(--white);
+}
+
+.footer-column p {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 8px;
+}
+
+.footer-column p i {
+    width: 14px;
+
+    margin-top: 4px;
+
+    color: var(--lqx-gold);
+
+    font-size: 0.7rem;
+}
+
+.footer-bottom {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 18px;
+
+    padding-top: 22px;
+
+    color: rgba(255,255,255,0.38);
+
+    font-size: 0.64rem;
+
+    white-space: nowrap;
+}
+
+.footer-bottom p {
+    color: rgba(255,255,255,0.38);
+
+    font-size: 0.64rem;
+
+    line-height: 1.4;
+}
+
+.footer-bottom strong {
+    color: rgba(255,255,255,0.55);
+}
+
+.footer-legal {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+}
+
+.footer-legal a {
+    color: rgba(255,255,255,0.38);
+
+    font-size: 0.64rem;
+
+    transition: color var(--transition);
+}
+
+.footer-legal a:hover {
+    color: var(--white);
+}
+
+
+/* =========================================================
+   21. RESOURCE DOWNLOADS
+   For Resources / Ecosystem page body only
+   NOT THE FOOTER
+   ========================================================= */
+
+.resources-downloads {
+    padding: 90px 0;
+    background: var(--off-white);
+}
+
+.resources-download-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.resource-download-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 28px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+}
+
+.resource-download-card:hover {
+    transform: translateY(-4px);
+
+    border-color: var(--lqx-gold);
+
+    box-shadow: var(--shadow-md);
+}
+
+.resource-download-card > i {
+    margin-bottom: 16px;
+
+    color: var(--lqx-gold);
+
+    font-size: 1.65rem;
+}
+
+.resource-download-card h3 {
+    margin-bottom: 10px;
+
+    font-size: 0.95rem;
+}
+
+.resource-download-card p {
+    margin-bottom: 20px;
+
+    font-size: 0.76rem;
+    line-height: 1.65;
+}
+
+.resource-download-card .btn {
+    margin-top: auto;
+
+    font-size: 0.7rem;
+}
+
+
+/* =========================================================
+   22. LOGO SLIDER
+   ========================================================= */
+
+.logo-slider {
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    padding: 10px 0;
+}
+
+.logo-track {
+    display: flex;
+    align-items: stretch;
+
+    width: max-content;
+
+    gap: 18px;
+
+    animation: logoScroll 30s linear infinite;
+}
+
+.logo-slider:hover .logo-track {
+    animation-play-state: paused;
+}
+
+.partner-logo {
+    min-width: 165px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 22px 18px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    color: var(--text-muted);
+
+    font-size: 0.72rem;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+.partner-logo i {
+    color: var(--lqx-gold);
+    font-size: 1.25rem;
+}
+
+@keyframes logoScroll {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/* =========================================================
+   23. FORMS
+   ========================================================= */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--lqx-navy);
+
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    color: var(--text);
+
+    font-size: 0.8rem;
+
+    outline: none;
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--lqx-gold);
+
+    box-shadow:
+        0 0 0 3px rgba(197,154,69,0.1);
+}
+
+.form-group textarea {
+    min-height: 140px;
+
+    resize: vertical;
+}
+
+
+/* =========================================================
+   24. PAGE HERO
+   ========================================================= */
+
+.page-hero {
+    position: relative;
+
+    padding: 170px 0 90px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--lqx-navy-dark),
+            var(--lqx-navy)
+        );
+
+    color: var(--white);
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+.page-hero::after {
+    content: "";
+
+    position: absolute;
+
+    right: -180px;
+    bottom: -300px;
+
+    width: 600px;
+    height: 600px;
+
+    border-radius: 50%;
+
+    background: rgba(197,154,69,0.05);
+
+    pointer-events: none;
+}
+
+.page-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.page-hero h1 {
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.page-hero p {
+    max-width: 720px;
+
+    margin: 0 auto;
+
+    color: rgba(255,255,255,0.68);
+}
+
+
+/* =========================================================
+   25. LIQUIDITY DESK
+   ========================================================= */
+
+.engagement-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.engagement-card {
+    position: relative;
+
+    padding: 32px 25px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    text-align: center;
+
+    box-shadow: var(--shadow-sm);
+
+    cursor: pointer;
+
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.engagement-card:hover,
+.engagement-card.active {
+    transform: translateY(-4px);
+
+    border-color: var(--lqx-gold);
+
+    box-shadow: var(--shadow-md);
+}
+
+.engagement-card i {
+    margin-bottom: 15px;
+
+    color: var(--lqx-gold);
+
+    font-size: 1.6rem;
+}
+
+.engagement-card h3 {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.engagement-card p {
+    font-size: 0.76rem;
+}
+
+
+/* =========================================================
+   26. UTILITY
+   ========================================================= */
+
+.text-center {
+    text-align: center;
+}
+
+.mt-0 {
+    margin-top: 0;
+}
+
+.mt-1 {
+    margin-top: 10px;
+}
+
+.mt-2 {
+    margin-top: 20px;
+}
+
+.mt-3 {
+    margin-top: 30px;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mb-1 {
+    margin-bottom: 10px;
+}
+
+.mb-2 {
+    margin-bottom: 20px;
+}
+
+.mb-3 {
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   27. TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .nav-links {
+        gap: 16px;
+    }
+
+    .nav-links a {
+        font-size: 0.67rem;
+    }
+
+    .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ecosystem-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .resources-download-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+
+    .footer-grid .footer-column:last-child {
+        grid-column: span 1;
+    }
+
+}
+
+
+/* =========================================================
+   28. TABLET / SMALL LAPTOP
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .nav-container {
+        min-height: 76px;
+    }
+
+    .nav-container nav {
+        display: none;
+    }
+
+    .hero {
+        min-height: auto;
+
+        padding: 150px 0 100px;
+    }
+
+    .hero-content {
+        max-width: 760px;
+    }
+
+    .hero-buttons {
+        max-width: 650px;
+    }
+
+    .card-grid,
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .vision-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .newsletter-content {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .newsletter-form {
+        width: 100%;
+        max-width: 650px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    .footer-bottom {
+        flex-wrap: wrap;
+        white-space: normal;
+    }
+
+}
+
+
+/* =========================================================
+   29. MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .container {
+        width: min(90%, 1200px);
+    }
+
+    .section {
+        padding: 82px 0;
+    }
+
+    .section-header {
+        margin-bottom: 42px;
+    }
+
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .section-tag {
+        font-size: 0.64rem;
+        letter-spacing: 0.12em;
+    }
+
+    p {
+        font-size: 0.82rem;
+    }
+
+
+    /* Header */
+
+    .nav-container {
+        min-height: 70px;
+    }
+
+    .logo-main {
+        font-size: 1.55rem;
+    }
+
+    .logo-gold {
+        font-size: 0.78rem;
+    }
+
+    .btn-nav {
+        min-height: 38px;
+        padding: 8px 12px;
+
+        font-size: 0.62rem;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        padding: 130px 0 80px;
+    }
+
+    .hero-label {
+        font-size: 0.62rem;
+        letter-spacing: 0.12em;
+    }
+
+    .hero h1 {
+        font-size: 2.25rem;
+    }
+
+    .hero-text {
+        font-size: 0.85rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+
+    /* Trust */
+
+    .trust-bar {
+        padding: 30px 0;
+    }
+
+    .trust-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+
+    /* Cards */
+
+    .card-grid,
+    .news-grid,
+    .vision-grid,
+    .values-grid,
+    .ecosystem-grid,
+    .steps-grid,
+    .resources-download-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+        padding: 28px 23px;
+    }
+
+
+    /* Ecosystem */
+
+    .ecosystem-card {
+        padding: 27px 22px;
+    }
+
+
+    /* Process */
+
+    .step-card {
+        padding: 28px 22px;
+    }
+
+
+    /* News */
+
+    .news-image {
+        height: 200px;
+    }
+
+
+    /* CTA */
+
+    .cta-section {
+        padding: 85px 0;
+    }
+
+    .cta-content h2 {
+        font-size: 1.85rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+    }
+
+
+    /* Newsletter */
+
+    .newsletter {
+        padding: 60px 0;
+    }
+
+    .newsletter-content {
+        gap: 22px;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .newsletter-form input,
+    .newsletter-form .btn {
+        width: 100%;
+    }
+
+
+    /* Footer */
+
+    .site-footer {
+        padding: 88px 0 20px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+
+        padding-bottom: 38px;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+    .footer-brand p {
+        font-size: 0.75rem;
+    }
+
+    .footer-column h4 {
+        font-size: 0.65rem;
+    }
+
+    .footer-column a,
+    .footer-column p {
+        font-size: 0.72rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 8px;
+
+        padding-top: 18px;
+    }
+
+    .footer-bottom p,
+    .footer-legal a {
+        font-size: 0.6rem;
+    }
+
+    .footer-legal {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+
+    /* Resources */
+
+    .resource-download-card {
+        padding: 24px;
+    }
+
+}
+
+
+/* =========================================================
+   30. VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .btn-nav {
+        width: auto;
+    }
+
+    .newsletter-form .btn {
+        width: 100%;
+    }
+
+    .footer-bottom {
+        align-items: flex-start;
+    }
+
+}
+
+
+/* =========================================================
+   31. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
+/* =========================================================
+   NEWS & INSIGHTS — ONLINE IMAGES
+   ========================================================= */
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.news-card {
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--lqx-gold);
+}
+
+/* Online image for every insight */
+.news-image {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Insight 1 — Commercial / Business Partnerships */
+.news-card:nth-child(1) .news-image {
+    background-image: url("https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=1600");
+}
+
+/* Insight 2 — Trade / Supply Chain / Logistics */
+.news-card:nth-child(2) .news-image {
+    background-image: url("https://images.unsplash.com/photo-1770944182416-911214039dae?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=1600");
+}
+
+/* Insight 3 — African Trade / Infrastructure */
+.news-card:nth-child(3) .news-image {
+    background-image: url("https://images.unsplash.com/photo-1759272548470-d0686d071036?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=1600");
+}
+
+.news-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(11, 31, 51, 0.02),
+        rgba(11, 31, 51, 0.18)
+    );
+    pointer-events: none;
+}
+
+.news-content {
+    padding: 28px;
+}
+
+.news-content h3 {
+    margin-bottom: 12px;
+    color: var(--lqx-navy);
+    font-size: 1.05rem;
+    line-height: 1.4;
+}
+
+.news-content p {
+    margin-bottom: 20px;
+    color: var(--text-light);
+    font-size: 0.84rem;
+    line-height: 1.7;
+}
+
+.news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--lqx-gold-dark);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.news-link i {
+    transition: transform var(--transition);
+}
+
+.news-link:hover i {
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .news-image {
+        height: 210px;
+    }
+
+    .news-content {
+        padding: 24px;
+    }
+}
+/* =========================================================
+   WHATSAPP FLOATING BUTTON
+   ========================================================= */
+
+.whatsapp-float {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #25D366;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 2rem;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.20);
+    z-index: 9999;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.whatsapp-float:hover {
+    color: #ffffff;
+    transform: scale(1.10);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.28);
+}
+
+.whatsapp-float i {
+    line-height: 1;
+}
+
+
+/* Mobile */
+@media (max-width: 650px) {
+    .whatsapp-float {
+        right: 18px;
+        bottom: 18px;
+        width: 58px;
+        height: 58px;
+        font-size: 1.8rem;
+    }
+}
+/* =========================================================
+   LQX LIQUIDITY DESK
+   PREMIUM DESK / COMMERCIAL INTAKE EXPERIENCE
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   DESK HERO
+   --------------------------------------------------------- */
+
+.desk-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 125px 0 105px;
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(197, 154, 69, 0.12),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            var(--lqx-navy-dark) 0%,
+            var(--lqx-navy) 58%,
+            #102d48 100%
+        );
+    color: var(--white);
+}
+
+.desk-hero::before {
+    content: "";
+    position: absolute;
+    width: 520px;
+    height: 520px;
+    right: -180px;
+    top: -220px;
+    border: 1px solid rgba(197, 154, 69, 0.16);
+    border-radius: 50%;
+}
+
+.desk-hero::after {
+    content: "";
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    right: -90px;
+    bottom: -220px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 50%;
+}
+
+.desk-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.desk-hero-content {
+    max-width: 820px;
+}
+
+.desk-hero .section-tag {
+    margin-bottom: 20px;
+    color: var(--lqx-gold-light);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+.desk-hero h1 {
+    max-width: 850px;
+    margin-bottom: 24px;
+    color: var(--white);
+    font-size: clamp(2.5rem, 5vw, 4.6rem);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+}
+
+.desk-hero h1 span {
+    color: var(--lqx-gold-light);
+}
+
+.desk-hero p {
+    max-width: 720px;
+    margin-bottom: 34px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 1.02rem;
+    line-height: 1.8;
+}
+
+.desk-hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+
+/* ---------------------------------------------------------
+   DESK TRUST STRIP
+   --------------------------------------------------------- */
+
+.desk-trust-bar {
+    position: relative;
+    z-index: 5;
+    margin-top: -38px;
+}
+
+.desk-trust-inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+.desk-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    min-height: 82px;
+    padding: 18px 22px;
+    border-right: 1px solid var(--border);
+}
+
+.desk-trust-item:last-child {
+    border-right: none;
+}
+
+.desk-trust-item i {
+    flex-shrink: 0;
+    color: var(--lqx-gold);
+    font-size: 1.15rem;
+}
+
+.desk-trust-item strong {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--lqx-navy);
+    font-size: 0.76rem;
+    letter-spacing: 0.04em;
+}
+
+.desk-trust-item span {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.7rem;
+}
+
+
+/* ---------------------------------------------------------
+   ENGAGEMENT PATHWAYS
+   --------------------------------------------------------- */
+
+.desk-pathways {
+    padding: 110px 0;
+    background: var(--off-white);
+}
+
+.desk-pathways-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 48px;
+}
+
+.desk-pathway {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 315px;
+    padding: 34px 30px;
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+}
+
+.desk-pathway::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--lqx-gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition);
+}
+
+.desk-pathway:hover {
+    transform: translateY(-6px);
+    border-color: rgba(197, 154, 69, 0.55);
+    box-shadow: var(--shadow-md);
+}
+
+.desk-pathway:hover::before {
+    transform: scaleX(1);
+}
+
+.desk-pathway-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 25px;
+    background: rgba(197, 154, 69, 0.10);
+    border-radius: var(--radius-md);
+    color: var(--lqx-gold-dark);
+    font-size: 1.25rem;
+}
+
+.desk-pathway h3 {
+    margin-bottom: 12px;
+    color: var(--lqx-navy);
+    font-size: 1.05rem;
+}
+
+.desk-pathway p {
+    margin-bottom: 24px;
+    color: var(--text-light);
+    font-size: 0.84rem;
+    line-height: 1.7;
+}
+
+.desk-pathway .btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+
+/* ---------------------------------------------------------
+   DESK PROCESS
+   --------------------------------------------------------- */
+
+.desk-process {
+    padding: 110px 0;
+    background: var(--white);
+}
+
+.desk-process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 52px;
+}
+
+.desk-process-step {
+    position: relative;
+    min-height: 235px;
+    padding: 28px 24px;
+    background: var(--off-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+}
+
+.desk-process-step:hover {
+    transform: translateY(-4px);
+    border-color: var(--lqx-gold);
+    box-shadow: var(--shadow-sm);
+}
+
+.desk-process-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 20px;
+    background: var(--lqx-navy);
+    border-radius: 50%;
+    color: var(--white);
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.desk-process-step:nth-child(n + 5) .desk-process-number {
+    background: var(--lqx-gold);
+    color: var(--lqx-navy);
+}
+
+.desk-process-step h3 {
+    margin-bottom: 10px;
+    color: var(--lqx-navy);
+    font-size: 0.94rem;
+    letter-spacing: 0.01em;
+}
+
+.desk-process-step p {
+    color: var(--text-light);
+    font-size: 0.78rem;
+    line-height: 1.7;
+}
+
+
+/* ---------------------------------------------------------
+   DESK FORM SECTION
+   --------------------------------------------------------- */
+
+.desk-form-section {
+    padding: 115px 0;
+    background:
+        linear-gradient(
+            135deg,
+            var(--lqx-navy-dark),
+            var(--lqx-navy)
+        );
+}
+
+.desk-form-layout {
+    display: grid;
+    grid-template-columns: 0.72fr 1.28fr;
+    gap: 55px;
+    align-items: start;
+}
+
+
+/* Left information panel */
+
+.desk-form-intro {
+    position: sticky;
+    top: 110px;
+    color: var(--white);
+}
+
+.desk-form-intro .section-tag {
+    color: var(--lqx-gold-light);
+}
+
+.desk-form-intro h2 {
+    margin: 15px 0 20px;
+    color: var(--white);
+    font-size: clamp(2rem, 3.5vw, 3.1rem);
+    line-height: 1.1;
+}
+
+.desk-form-intro > p {
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.66);
+    font-size: 0.88rem;
+    line-height: 1.8;
+}
+
+.desk-form-points {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.desk-form-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.desk-form-point i {
+    flex-shrink: 0;
+    margin-top: 3px;
+    color: var(--lqx-gold-light);
+}
+
+.desk-form-point strong {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--white);
+    font-size: 0.78rem;
+}
+
+.desk-form-point span {
+    color: rgba(255, 255, 255, 0.52);
+    font-size: 0.72rem;
+    line-height: 1.55;
+}
+
+
+/* Form card */
+
+.desk-form-card {
+    padding: 42px;
+    background: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+}
+
+.desk-form-card h3 {
+    margin-bottom: 8px;
+    color: var(--lqx-navy);
+    font-size: 1.3rem;
+}
+
+.desk-form-card > p {
+    margin-bottom: 30px;
+    color: var(--text-light);
+    font-size: 0.8rem;
+    line-height: 1.65;
+}
+
+
+/* ---------------------------------------------------------
+   FORM FIELDS
+   --------------------------------------------------------- */
+
+.desk-form .form-group {
+    margin-bottom: 20px;
+}
+
+.desk-form label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--lqx-navy);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.desk-form input,
+.desk-form select,
+.desk-form textarea {
+    width: 100%;
+    padding: 13px 15px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.82rem;
+    outline: none;
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.desk-form input:focus,
+.desk-form select:focus,
+.desk-form textarea:focus {
+    border-color: var(--lqx-gold);
+    box-shadow: 0 0 0 3px rgba(197, 154, 69, 0.10);
+}
+
+.desk-form textarea {
+    min-height: 125px;
+    resize: vertical;
+}
+
+.desk-form input::placeholder,
+.desk-form textarea::placeholder {
+    color: #a1aab2;
+}
+
+.desk-form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+
+/* ---------------------------------------------------------
+   FORM SECTION HEADINGS
+   --------------------------------------------------------- */
+
+.desk-form-section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 32px 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+.desk-form-section-title i {
+    color: var(--lqx-gold);
+}
+
+.desk-form-section-title h4 {
+    margin: 0;
+    color: var(--lqx-navy);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+
+/* ---------------------------------------------------------
+   FILE UPLOAD
+   --------------------------------------------------------- */
+
+.desk-form input[type="file"] {
+    padding: 11px;
+    background: var(--off-white);
+    cursor: pointer;
+}
+
+.desk-form input[type="file"]::file-selector-button {
+    margin-right: 12px;
+    padding: 8px 12px;
+    background: var(--lqx-navy);
+    border: none;
+    border-radius: var(--radius-sm);
+    color: var(--white);
+    font-family: inherit;
+    font-size: 0.7rem;
+    cursor: pointer;
+}
+
+
+/* ---------------------------------------------------------
+   CONSENT / DISCLAIMER
+   --------------------------------------------------------- */
+
+.desk-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 25px 0;
+    padding: 15px;
+    background: var(--off-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+}
+
+.desk-consent input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    accent-color: var(--lqx-gold);
+}
+
+.desk-consent label {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 0.7rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.desk-disclaimer {
+    margin-top: 18px;
+    color: var(--text-muted);
+    font-size: 0.68rem;
+    line-height: 1.6;
+}
+
+
+/* ---------------------------------------------------------
+   DESK SIDE INFORMATION CARDS
+   --------------------------------------------------------- */
+
+.desk-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 45px;
+}
+
+.desk-info-card {
+    padding: 28px;
+    background: var(--off-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+}
+
+.desk-info-card i {
+    display: block;
+    margin-bottom: 16px;
+    color: var(--lqx-gold);
+    font-size: 1.35rem;
+}
+
+.desk-info-card h3 {
+    margin-bottom: 9px;
+    color: var(--lqx-navy);
+    font-size: 0.92rem;
+}
+
+.desk-info-card p {
+    color: var(--text-light);
+    font-size: 0.77rem;
+    line-height: 1.7;
+}
+
+
+/* ---------------------------------------------------------
+   DESK FAQ
+   --------------------------------------------------------- */
+
+.desk-faq {
+    padding: 110px 0;
+    background: var(--off-white);
+}
+
+.desk-faq-list {
+    max-width: 850px;
+    margin: 48px auto 0;
+}
+
+.desk-faq-item {
+    margin-bottom: 10px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.desk-faq-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 21px 24px;
+    color: var(--lqx-navy);
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+}
+
+.desk-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.desk-faq-item summary::after {
+    content: "+";
+    flex-shrink: 0;
+    color: var(--lqx-gold-dark);
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.desk-faq-item[open] summary::after {
+    content: "−";
+}
+
+.desk-faq-answer {
+    padding: 0 24px 22px;
+    color: var(--text-light);
+    font-size: 0.78rem;
+    line-height: 1.75;
+}
+
+
+/* ---------------------------------------------------------
+   DESK FINAL CTA
+   --------------------------------------------------------- */
+
+.desk-final-cta {
+    position: relative;
+    overflow: hidden;
+    padding: 105px 0;
+    background: var(--lqx-navy);
+    text-align: center;
+}
+
+.desk-final-cta::before,
+.desk-final-cta::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(197, 154, 69, 0.12);
+    border-radius: 50%;
+}
+
+.desk-final-cta::before {
+    width: 430px;
+    height: 430px;
+    left: -210px;
+    top: -170px;
+}
+
+.desk-final-cta::after {
+    width: 300px;
+    height: 300px;
+    right: -120px;
+    bottom: -160px;
+}
+
+.desk-final-cta .container {
+    position: relative;
+    z-index: 2;
+}
+
+.desk-final-cta h2 {
+    max-width: 720px;
+    margin: 0 auto 18px;
+    color: var(--white);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.desk-final-cta p {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    color: rgba(255, 255, 255, 0.64);
+    font-size: 0.88rem;
+    line-height: 1.75;
+}
+
+.desk-final-cta .btn {
+    min-width: 190px;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .desk-trust-inner {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .desk-trust-item:nth-child(2) {
+        border-right: none;
+    }
+
+    .desk-trust-item:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--border);
+    }
+
+    .desk-pathways-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .desk-pathway {
+        min-height: auto;
+    }
+
+    .desk-process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .desk-form-layout {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .desk-form-intro {
+        position: static;
+        max-width: 760px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .desk-hero {
+        padding: 95px 0 80px;
+    }
+
+    .desk-hero h1 {
+        font-size: 2.45rem;
+    }
+
+    .desk-hero p {
+        font-size: 0.88rem;
+    }
+
+    .desk-hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .desk-hero-buttons .btn {
+        width: 100%;
+    }
+
+    .desk-trust-bar {
+        margin-top: -25px;
+    }
+
+    .desk-trust-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .desk-trust-item {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .desk-trust-item:last-child {
+        border-bottom: none;
+    }
+
+    .desk-pathways,
+    .desk-process,
+    .desk-faq {
+        padding: 80px 0;
+    }
+
+    .desk-process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .desk-process-step {
+        min-height: auto;
+    }
+
+    .desk-form-section {
+        padding: 80px 0;
+    }
+
+    .desk-form-card {
+        padding: 25px 20px;
+    }
+
+    .desk-form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .desk-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .desk-final-cta {
+        padding: 80px 0;
+    }
+
+}
+/* =========================================================
+   ACCESS LIQUIDITY DESK — NAVIGATION CTA
+   ========================================================= */
+
+.nav-cta,
+.navbar .nav-cta,
+nav .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 12px 20px;
+    background: var(--lqx-gold);
+    border: 1px solid var(--lqx-gold);
+    border-radius: var(--radius-md);
+    color: var(--lqx-navy) !important;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    line-height: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    box-shadow: 0 5px 16px rgba(197, 154, 69, 0.18);
+    transition:
+        background var(--transition),
+        border-color var(--transition),
+        color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.nav-cta:hover,
+.navbar .nav-cta:hover,
+nav .nav-cta:hover {
+    background: var(--lqx-gold-light);
+    border-color: var(--lqx-gold-light);
+    color: var(--lqx-navy) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(197, 154, 69, 0.28);
+}
+
+.nav-cta:active,
+.navbar .nav-cta:active,
+nav .nav-cta:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .nav-cta,
+    .navbar .nav-cta,
+    nav .nav-cta {
+        width: 100%;
+        min-height: 46px;
+        margin-top: 8px;
+        padding: 13px 18px;
+    }
+
+}
+/* =========================================================
+   ACCESS LIQUIDITY DESK — FORCE NAVIGATION STYLING
+   ========================================================= */
+
+header nav a[href*="liquidity-desk"],
+.navbar a[href*="liquidity-desk"],
+.nav-menu a[href*="liquidity-desk"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    min-height: 44px !important;
+    padding: 12px 20px !important;
+
+    background: #c59a45 !important;
+    border: 1px solid #c59a45 !important;
+    border-radius: 8px !important;
+
+    color: #0b1f33 !important;
+    font-size: 0.72rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.06em !important;
+    line-height: 1 !important;
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+
+    box-shadow: 0 5px 16px rgba(197, 154, 69, 0.20) !important;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease !important;
+}
+
+header nav a[href*="liquidity-desk"]:hover,
+.navbar a[href*="liquidity-desk"]:hover,
+.nav-menu a[href*="liquidity-desk"]:hover {
+    background: #d8b86b !important;
+    border-color: #d8b86b !important;
+    color: #0b1f33 !important;
+
+    transform: translateY(-2px) !important;
+
+    box-shadow: 0 9px 24px rgba(197, 154, 69, 0.30) !important;
+}
+/* =========================================================
+   LQX AFRICA — LIQUIDITY DESK PAGE
+   PREMIUM INSTITUTIONAL STYLING
+   ========================================================= */
+
+
+/* =========================================================
+   01. LIQUIDITY DESK NAVIGATION CTA
+   ========================================================= */
+
+.nav-menu .nav-cta {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin-left: 8px;
+    padding: 11px 18px !important;
+
+    background: #c59a45 !important;
+    border: 1px solid #c59a45 !important;
+    border-radius: 8px !important;
+
+    color: #0b1f33 !important;
+    font-size: 0.68rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.055em !important;
+    line-height: 1 !important;
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+
+    box-shadow: 0 5px 16px rgba(197, 154, 69, 0.18);
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease !important;
+}
+
+.nav-menu .nav-cta:hover {
+    background: #d8b86b !important;
+    border-color: #d8b86b !important;
+    color: #0b1f33 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 9px 24px rgba(197, 154, 69, 0.28);
+}
+
+
+/* =========================================================
+   02. LIQUIDITY DESK HERO
+   ========================================================= */
+
+.hero-inner {
+    position: relative;
+    overflow: hidden;
+
+    padding: 135px 0 115px;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(197, 154, 69, 0.14),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #071522 0%,
+            #0b1f33 55%,
+            #123e63 100%
+        );
+
+    color: #ffffff;
+}
+
+.hero-inner::before {
+    content: "";
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    right: -230px;
+    top: -240px;
+
+    border: 1px solid rgba(197, 154, 69, 0.15);
+    border-radius: 50%;
+}
+
+.hero-inner::after {
+    content: "";
+    position: absolute;
+
+    width: 360px;
+    height: 360px;
+
+    right: 80px;
+    bottom: -280px;
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 50%;
+}
+
+.hero-inner .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-inner .hero-content {
+    max-width: 900px;
+}
+
+.hero-inner .section-label {
+    margin-bottom: 22px;
+
+    color: #d8b86b;
+
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+}
+
+.hero-inner h1 {
+    max-width: 900px;
+    margin-bottom: 28px;
+
+    color: #ffffff;
+
+    font-size: clamp(2.5rem, 5vw, 4.7rem);
+    line-height: 1.04;
+    letter-spacing: -0.04em;
+}
+
+.hero-inner h1 span {
+    display: block;
+    margin-top: 8px;
+
+    color: #d8b86b;
+}
+
+.hero-inner .hero-text {
+    max-width: 780px;
+    margin-bottom: 15px;
+
+    color: rgba(255, 255, 255, 0.68);
+
+    font-size: 0.94rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   03. LIQUIDITY OPTIONS
+   ========================================================= */
+
+.liquidity-options {
+    margin-top: 50px;
+}
+
+.liquidity-option {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 335px;
+
+    padding: 34px 30px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce3e9;
+    border-radius: 8px;
+
+    box-shadow: 0 4px 14px rgba(11, 31, 51, 0.06);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.liquidity-option::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: #c59a45;
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform 0.25s ease;
+}
+
+.liquidity-option:hover {
+    transform: translateY(-6px);
+
+    border-color: #c59a45;
+
+    box-shadow:
+        0 14px 35px rgba(11, 31, 51, 0.10);
+}
+
+.liquidity-option:hover::before {
+    transform: scaleX(1);
+}
+
+.liquidity-option.selected {
+    border-color: #c59a45;
+
+    box-shadow:
+        0 14px 35px rgba(11, 31, 51, 0.11);
+}
+
+.liquidity-option.selected::before {
+    transform: scaleX(1);
+}
+
+.liquidity-option .card-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    margin-bottom: 24px;
+
+    background: #0b1f33;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    font-size: 0.72rem;
+    font-weight: 800;
+}
+
+.liquidity-option.selected .card-number {
+    background: #c59a45;
+    color: #0b1f33;
+}
+
+.liquidity-option h3 {
+    margin-bottom: 13px;
+
+    color: #0b1f33;
+
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.liquidity-option p {
+    margin-bottom: 25px;
+
+    color: #5d6b78;
+
+    font-size: 0.82rem;
+    line-height: 1.75;
+}
+
+.liquidity-option .btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+
+/* =========================================================
+   04. BUTTONS
+   ========================================================= */
+
+.btn-primary {
+    background: #c59a45 !important;
+    border-color: #c59a45 !important;
+    color: #0b1f33 !important;
+
+    font-weight: 800;
+}
+
+.btn-primary:hover {
+    background: #d8b86b !important;
+    border-color: #d8b86b !important;
+    color: #0b1f33 !important;
+}
+
+.liquidity-option .btn-outline {
+    background: transparent;
+    border: 1px solid #0b1f33;
+    color: #0b1f33;
+}
+
+.liquidity-option .btn-outline:hover {
+    background: #0b1f33;
+    border-color: #0b1f33;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   05. PROCESS — 8 STAGES
+   ========================================================= */
+
+.process-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-top: 52px;
+}
+
+.process-step {
+    position: relative;
+
+    min-height: 235px;
+
+    padding: 28px 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce3e9;
+    border-radius: 8px;
+
+    box-shadow: 0 4px 14px rgba(11, 31, 51, 0.04);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.section-alt .process-step {
+    background: #ffffff;
+}
+
+.process-step:hover {
+    transform: translateY(-4px);
+
+    border-color: #c59a45;
+
+    box-shadow:
+        0 12px 28px rgba(11, 31, 51, 0.08);
+}
+
+.process-step span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    margin-bottom: 20px;
+
+    background: #0b1f33;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    font-size: 0.7rem;
+    font-weight: 800;
+}
+
+.process-step:nth-child(n + 5) span {
+    background: #c59a45;
+    color: #0b1f33;
+}
+
+.process-step h3 {
+    margin-bottom: 10px;
+
+    color: #0b1f33;
+
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.process-step p {
+    color: #5d6b78;
+
+    font-size: 0.77rem;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   06. LIQUIDITY FORM SECTION
+   ========================================================= */
+
+.liquidity-form-section {
+    position: relative;
+
+    padding: 115px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #071522 0%,
+            #0b1f33 60%,
+            #102d48 100%
+        );
+}
+
+.liquidity-form-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -250px;
+    top: -200px;
+
+    border: 1px solid rgba(197, 154, 69, 0.10);
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.liquidity-form-section .section-heading {
+    position: relative;
+    z-index: 2;
+
+    max-width: 800px;
+
+    margin-bottom: 50px;
+}
+
+.liquidity-form-section .section-label {
+    color: #d8b86b;
+}
+
+.liquidity-form-section .section-heading h2 {
+    color: #ffffff;
+}
+
+.liquidity-form-section .section-heading p {
+    color: rgba(255, 255, 255, 0.62);
+}
+
+
+/* =========================================================
+   07. FORM LAYOUT
+   ========================================================= */
+
+.form-layout {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) 330px;
+
+    gap: 40px;
+
+    align-items: start;
+}
+
+.form-main {
+    min-width: 0;
+
+    padding: 42px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   08. FORM SECTIONS
+   ========================================================= */
+
+.form-section {
+    padding: 0 0 32px;
+    margin-bottom: 32px;
+
+    border-bottom: 1px solid #dce3e9;
+}
+
+.form-section:last-of-type {
+    margin-bottom: 0;
+}
+
+.form-section-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 24px;
+}
+
+.form-section-heading span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    background: #0b1f33;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    font-size: 0.66rem;
+    font-weight: 800;
+}
+
+.form-section-heading h3 {
+    margin: 0;
+
+    color: #0b1f33;
+
+    font-size: 0.76rem;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   09. FORM ROWS & INPUTS
+   ========================================================= */
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+.form-group {
+    margin-bottom: 19px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #0b1f33;
+
+    font-size: 0.71rem;
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce3e9;
+    border-radius: 6px;
+
+    color: #17212b;
+
+    font-family: inherit;
+    font-size: 0.8rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #c59a45;
+
+    box-shadow:
+        0 0 0 3px rgba(197, 154, 69, 0.10);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #a0aab3;
+}
+
+.form-group textarea {
+    min-height: 120px;
+
+    resize: vertical;
+}
+
+.form-group small {
+    display: block;
+
+    margin-top: 7px;
+
+    color: #7d8994;
+
+    font-size: 0.67rem;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   10. FILE UPLOAD
+   ========================================================= */
+
+.form-group input[type="file"] {
+    padding: 9px;
+
+    background: #f7f9fb;
+
+    cursor: pointer;
+}
+
+.form-group input[type="file"]::file-selector-button {
+    margin-right: 10px;
+
+    padding: 8px 12px;
+
+    background: #0b1f33;
+
+    border: none;
+    border-radius: 5px;
+
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 0.68rem;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   11. DISCLAIMER
+   ========================================================= */
+
+.form-disclaimer {
+    margin: 25px 0;
+
+    padding: 20px;
+
+    background: #f7f9fb;
+
+    border-left: 3px solid #c59a45;
+    border-radius: 4px;
+}
+
+.form-disclaimer-title {
+    margin-bottom: 10px;
+
+    color: #a77d2f;
+
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.10em;
+}
+
+.form-disclaimer p {
+    margin-bottom: 8px;
+
+    color: #5d6b78;
+
+    font-size: 0.68rem;
+    line-height: 1.65;
+}
+
+.form-disclaimer p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   12. CHECKBOX
+   ========================================================= */
+
+.form-checkbox {
+    margin: 24px 0;
+}
+
+.form-checkbox label {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    color: #5d6b78;
+
+    font-size: 0.69rem;
+    font-weight: 400;
+
+    line-height: 1.6;
+}
+
+.form-checkbox input {
+    flex-shrink: 0;
+
+    width: 16px;
+    height: 16px;
+
+    margin-top: 2px;
+
+    accent-color: #c59a45;
+}
+
+
+/* =========================================================
+   13. SUBMIT BUTTON
+   ========================================================= */
+
+#submitButton {
+    width: 100%;
+
+    min-height: 52px;
+
+    background: #c59a45 !important;
+    border-color: #c59a45 !important;
+
+    color: #0b1f33 !important;
+
+    font-size: 0.73rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+
+    box-shadow:
+        0 7px 20px rgba(197, 154, 69, 0.18);
+}
+
+#submitButton:hover {
+    background: #d8b86b !important;
+    border-color: #d8b86b !important;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 11px 26px rgba(197, 154, 69, 0.25);
+}
+
+#submitButton:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   14. FORM MESSAGE
+   ========================================================= */
+
+.form-message {
+    margin-top: 15px;
+
+    padding: 13px 15px;
+
+    border-radius: 6px;
+
+    font-size: 0.73rem;
+    line-height: 1.6;
+}
+
+.form-message.success {
+    background: #edf7f0;
+    border: 1px solid #c6e3cf;
+    color: #2f7d50;
+}
+
+.form-message.error {
+    background: #faf0f0;
+    border: 1px solid #e2c5c5;
+    color: #a33b3b;
+}
+
+
+/* =========================================================
+   15. FORM SIDEBAR
+   ========================================================= */
+
+.form-sidebar {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    position: sticky;
+    top: 100px;
+}
+
+.sidebar-card {
+    padding: 28px;
+
+    background: rgba(255, 255, 255, 0.055);
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 8px;
+}
+
+.sidebar-card .section-label {
+    margin-bottom: 13px;
+
+    color: #d8b86b;
+
+    font-size: 0.64rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+}
+
+.sidebar-card h3 {
+    margin-bottom: 14px;
+
+    color: #ffffff;
+
+    font-size: 0.88rem;
+    line-height: 1.45;
+}
+
+.sidebar-card p {
+    margin-bottom: 20px;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 0.73rem;
+    line-height: 1.7;
+}
+
+.check-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.check-list li {
+    position: relative;
+
+    padding-left: 21px;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 0.7rem;
+    line-height: 1.5;
+}
+
+.check-list li::before {
+    content: "✓";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    color: #d8b86b;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   16. CAPITAL SECTION
+   ========================================================= */
+
+#capitalSection {
+    display: none;
+}
+
+
+/* =========================================================
+   17. WHAT THE DESK DOES
+   ========================================================= */
+
+.section .cards-grid.three-column {
+    gap: 20px;
+}
+
+.section .cards-grid.three-column > .card {
+    padding: 32px 28px;
+
+    border-radius: 8px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.section .cards-grid.three-column > .card:hover {
+    transform: translateY(-5px);
+
+    border-color: #c59a45;
+
+    box-shadow:
+        0 14px 32px rgba(11, 31, 51, 0.09);
+}
+
+.section .cards-grid.three-column .card-number {
+    margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   18. FAQ
+   ========================================================= */
+
+.faq-list {
+    max-width: 850px;
+
+    margin: 50px auto 0;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+
+    padding: 0;
+
+    background: #ffffff;
+
+    border: 1px solid #dce3e9;
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.faq-item:hover {
+    border-color: rgba(197, 154, 69, 0.55);
+
+    box-shadow:
+        0 8px 22px rgba(11, 31, 51, 0.06);
+}
+
+.faq-item h3 {
+    margin: 0;
+
+    padding: 21px 25px;
+
+    color: #0b1f33;
+
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+
+.faq-item p {
+    margin: 0;
+
+    padding: 0 25px 23px;
+
+    color: #5d6b78;
+
+    font-size: 0.76rem;
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   19. FINAL CTA
+   ========================================================= */
+
+.cta-section {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 110px 0;
+
+    background:
+        radial-gradient(
+            circle at 15% 50%,
+            rgba(197, 154, 69, 0.10),
+            transparent 30%
+        ),
+        #0b1f33;
+}
+
+.cta-section::before,
+.cta-section::after {
+    content: "";
+
+    position: absolute;
+
+    border: 1px solid rgba(197, 154, 69, 0.12);
+
+    border-radius: 50%;
+}
+
+.cta-section::before {
+    width: 430px;
+    height: 430px;
+
+    left: -220px;
+    top: -180px;
+}
+
+.cta-section::after {
+    width: 320px;
+    height: 320px;
+
+    right: -150px;
+    bottom: -190px;
+}
+
+.cta-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.cta-content .section-label {
+    color: #d8b86b;
+}
+
+.cta-content h2 {
+    margin: 15px auto 18px;
+
+    color: #ffffff;
+
+    font-size: clamp(2rem, 4vw, 3.3rem);
+    line-height: 1.1;
+}
+
+.cta-content p {
+    max-width: 650px;
+
+    margin: 0 auto 30px;
+
+    color: rgba(255, 255, 255, 0.62);
+
+    font-size: 0.86rem;
+    line-height: 1.75;
+}
+
+.cta-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 11px;
+}
+
+.cta-buttons .btn-primary {
+    background: #c59a45 !important;
+    border-color: #c59a45 !important;
+    color: #0b1f33 !important;
+}
+
+.cta-buttons .btn-outline {
+    background: transparent;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    color: #ffffff;
+}
+
+.cta-buttons .btn-outline:hover {
+    background: #ffffff;
+
+    border-color: #ffffff;
+
+    color: #0b1f33;
+}
+
+
+/* =========================================================
+   20. FOOTER CLEAN-UP
+   ========================================================= */
+
+.site-footer {
+    padding: 115px 0 25px;
+
+    background: #071522;
+}
+
+.footer-grid {
+    padding-bottom: 50px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.footer-bottom {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-top: 22px;
+
+    color: rgba(255, 255, 255, 0.38);
+
+    font-size: 0.62rem;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-legal {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    margin: 0;
+}
+
+.footer-legal a {
+    color: rgba(255, 255, 255, 0.38);
+
+    font-size: 0.62rem;
+}
+
+.footer-legal a:hover {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   21. RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .nav-menu .nav-cta {
+        padding: 10px 14px !important;
+        font-size: 0.62rem !important;
+    }
+
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .form-sidebar {
+        position: static;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   22. RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .nav-menu .nav-cta {
+        width: 100%;
+
+        margin: 8px 0 0;
+
+        padding: 13px 18px !important;
+    }
+
+    .hero-inner {
+        padding: 105px 0 85px;
+    }
+
+    .hero-inner h1 {
+        font-size: 2.65rem;
+    }
+
+    .liquidity-options {
+        grid-template-columns: 1fr;
+    }
+
+    .liquidity-option {
+        min-height: auto;
+    }
+
+    .form-main {
+        padding: 32px 25px;
+    }
+
+    .form-sidebar {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .hero-inner {
+        padding: 90px 0 75px;
+    }
+
+    .hero-inner h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-inner .hero-text {
+        font-size: 0.82rem;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-step {
+        min-height: auto;
+    }
+
+    .form-layout {
+        gap: 25px;
+    }
+
+    .form-main {
+        padding: 25px 18px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .form-section-heading h3 {
+        font-size: 0.7rem;
+    }
+
+    .sidebar-card {
+        padding: 24px;
+    }
+
+    .cta-section {
+        padding: 80px 0;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+    .footer-legal {
+        flex-wrap: wrap;
+    }
+
+}
+/* =========================================
+   BUILDING THE INFRASTRUCTURE
+   ========================================= */
+
+.infrastructure-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: stretch;
+}
+
+/* 2 x 2 topic cards */
+.infrastructure-content .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+/* Infrastructure image */
+.infrastructure-image {
+    min-height: 100%;
+    border-radius: 12px;
+    background-image: url("https://ecomnewsafrique.com/app/uploads/sites/4/2026/03/Kenya-creation-dun-fonds-national-dinfrastructure.png");
+    background-size: cover;
+    background-position: center;
+}
+
+/* Keep the cards compact */
+.infrastructure-content .feature-card {
+    margin: 0;
+    padding: 22px;
+}
+@media (max-width: 768px) {
+
+    .infrastructure-content {
+        grid-template-columns: 1fr;
+    }
+
+    .infrastructure-content .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .infrastructure-image {
+        min-height: 280px;
+    }
+
+}
+/* =========================================================
+   LQX AFRICA — GLOBAL PAGE SPACING & ABOUT PAGE FIX
+   Match internal pages with HOME / LANDING PAGE
+   ========================================================= */
+
+/* ---------- GLOBAL BOX MODEL ---------- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* ---------- GLOBAL BODY ---------- */
+
+html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: var(--white);
+    color: var(--text);
+}
+
+
+/* =========================================================
+   PAGE HERO
+   Same visual breathing room as HOME
+   ========================================================= */
+
+.page-hero {
+    position: relative;
+    width: 100%;
+    padding: 150px 0 95px !important;
+    margin: 0 !important;
+    background: var(--lqx-navy) !important;
+    color: var(--white);
+    text-align: center;
+}
+
+.page-hero .container {
+    max-width: var(--container);
+    margin: 0 auto;
+}
+
+.page-hero h1 {
+    margin: 0 0 18px !important;
+    color: var(--white);
+    font-size: clamp(2.2rem, 4vw, 3.6rem);
+    line-height: 1.12;
+    font-weight: 600;
+}
+
+.page-hero p {
+    max-width: 720px;
+    margin: 0 auto !important;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   SPACE BETWEEN PAGE TITLE AND FIRST SECTION
+   ========================================================= */
+
+.page-hero + section {
+    margin-top: 0 !important;
+}
+
+
+/* =========================================================
+   ALL STANDARD SECTIONS
+   Match homepage vertical rhythm
+   ========================================================= */
+
+.section,
+.section-light,
+.section-dark {
+    position: relative;
+    margin: 0 !important;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+
+/* First content section after page hero */
+.page-hero + .section,
+.page-hero + .section-light,
+.page-hero + .section-dark {
+    padding-top: 100px !important;
+}
+
+
+/* =========================================================
+   SECTION TITLES
+   ========================================================= */
+
+.section-header {
+    margin-bottom: 45px !important;
+}
+
+.section-header h2 {
+    margin-top: 0 !important;
+    margin-bottom: 15px !important;
+}
+
+.section-header p {
+    margin-top: 0 !important;
+}
+
+
+/* Generic headings inside sections */
+.section h2,
+.section-light h2,
+.section-dark h2 {
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   ABOUT PAGE — STABLE GRID / CARD FIX
+   ========================================================= */
+
+.about-page,
+.about-section,
+.about-content {
+    width: 100%;
+}
+
+.about-page .container,
+.about-section .container {
+    max-width: var(--container);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Prevent old About CSS from creating oversized spacing */
+.about-section {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 100px !important;
+    padding-bottom: 100px !important;
+}
+
+
+/* About content columns */
+.about-grid,
+.about-content-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 60px;
+    align-items: center;
+}
+
+
+/* About cards */
+.about-card,
+.value-card,
+.mission-card,
+.vision-card {
+    height: 100%;
+    border-radius: var(--radius-md);
+}
+
+
+/* =========================================================
+   CARD GRIDS
+   Prevent broken/overflowing About page cards
+   ========================================================= */
+
+.card-grid,
+.feature-grid,
+.values-grid,
+.benefits-grid,
+.solutions-grid,
+.industry-grid,
+.news-grid {
+    width: 100%;
+}
+
+.card-grid > *,
+.feature-grid > *,
+.values-grid > *,
+.benefits-grid > *,
+.solutions-grid > *,
+.industry-grid > *,
+.news-grid > * {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   CTA SECTIONS
+   ========================================================= */
+
+.cta-section {
+    margin: 0 !important;
+    padding: 90px 0 !important;
+}
+
+
+/* =========================================================
+   FOOTER
+   Keep consistent with HOME
+   ========================================================= */
+
+.site-footer {
+    margin-top: 0 !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .page-hero {
+        padding: 125px 0 80px !important;
+    }
+
+    .section,
+    .section-light,
+    .section-dark {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .page-hero + .section,
+    .page-hero + .section-light,
+    .page-hero + .section-dark {
+        padding-top: 80px !important;
+    }
+
+    .about-grid,
+    .about-content-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .page-hero {
+        padding: 110px 0 65px !important;
+    }
+
+    .page-hero h1 {
+        font-size: 2rem;
+    }
+
+    .page-hero p {
+        font-size: 0.85rem;
+        line-height: 1.7;
+    }
+
+    .section,
+    .section-light,
+    .section-dark {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .page-hero + .section,
+    .page-hero + .section-light,
+    .page-hero + .section-dark {
+        padding-top: 65px !important;
+    }
+
+    .section-header {
+        margin-bottom: 32px !important;
+    }
+
+    .cta-section {
+        padding: 65px 0 !important;
+    }
+}
+/* =========================================================
+   OUR JOURNEY — LQX AFRICA
+   ========================================================= */
+
+.our-journey {
+    background: var(--white);
+    padding: 105px 0;
+}
+
+.our-journey .container {
+    max-width: var(--container);
+    margin: 0 auto;
+}
+
+/* Section heading */
+.our-journey-header {
+    max-width: 780px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.our-journey-header .section-label {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: var(--lqx-gold);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.our-journey-header h2 {
+    margin: 0 0 18px;
+    color: var(--lqx-navy);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    line-height: 1.15;
+    font-weight: 600;
+}
+
+.our-journey-header p {
+    max-width: 680px;
+    margin: 0 auto;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   JOURNEY GRID
+   ========================================================= */
+
+.our-journey-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+
+/* =========================================================
+   JOURNEY CARD
+   ========================================================= */
+
+.journey-card {
+    position: relative;
+    padding: 34px 36px;
+    background: var(--off-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+}
+
+.journey-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(197, 154, 69, 0.55);
+    box-shadow: var(--shadow-md);
+}
+
+
+/* Gold number / accent */
+.journey-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--lqx-gold);
+}
+
+
+/* Number */
+.journey-number {
+    display: block;
+    margin-bottom: 14px;
+    color: var(--lqx-gold);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+
+/* Card title */
+.journey-card h3 {
+    margin: 0 0 12px;
+    color: var(--lqx-navy);
+    font-size: 1.15rem;
+    line-height: 1.35;
+    font-weight: 600;
+}
+
+
+/* Card description */
+.journey-card p {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 0.87rem;
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   OPTIONAL GOLD LINE
+   ========================================================= */
+
+.journey-card h3::after {
+    content: "";
+    display: block;
+    width: 32px;
+    height: 2px;
+    margin-top: 12px;
+    background: var(--lqx-gold);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 750px) {
+
+    .our-journey {
+        padding: 80px 0;
+    }
+
+    .our-journey-header {
+        margin-bottom: 40px;
+    }
+
+    .our-journey-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .journey-card {
+        padding: 28px 30px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .our-journey {
+        padding: 65px 0;
+    }
+
+    .our-journey-header h2 {
+        font-size: 2rem;
+    }
+
+    .our-journey-header p {
+        font-size: 0.85rem;
+    }
+
+    .journey-card {
+        padding: 25px 26px;
+    }
+
+    .journey-card h3 {
+        font-size: 1rem;
+    }
+
+    .journey-card p {
+        font-size: 0.82rem;
+    }
+}
